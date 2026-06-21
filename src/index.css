@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+/* Base Dynamic Variables for perfect light/dark adaptive mappings */
+:root {
+  --color-slate-950: #030712; /* Deep background canvas */
+  --color-slate-900: #0b0f19; /* Deep dark background */
+  --color-slate-850: #131a2c; /* Panel borders and surfaces */
+  --color-slate-800: #1e293b; /* Borders */
+  --color-slate-700: #334155; /* Accent border */
+  --color-slate-100: #f8fafc; /* Dynamic slate text scale - Soft, classy silvery-white in dark mode */
+  --color-slate-200: #e2e8f0; /* Classy off-white body text */
+  --color-slate-350: #94a3b8; /* Classy secondary helper */
+  --color-slate-300: #cbd5e1;
+  --color-slate-400: #94a3b8;
+  --color-slate-500: #64748b;
+  --color-slate-650: #475569;
+
+  /* Native standard high-glowing neon theme styles for Dark Mode */
+  --color-indigo-300: #a5b4fc;
+  --color-indigo-400: #818cf8;
+  --color-indigo-500: #6366f1;
+  --color-indigo-650: #4f46e5;
+  --color-indigo-700: #4338ca;
+
+  --color-emerald-300: #6ee7b7;
+  --color-emerald-400: #34d399;
+  --color-emerald-500: #10b981;
+  --color-emerald-650: #059669;
+
+  --color-rose-300: #fca5a5;
+  --color-rose-400: #f87171;
+  --color-rose-500: #ef4444;
+  --color-rose-650: #dc2626;
+
+  --color-amber-300: #fcd34d;
+  --color-amber-400: #fbbf24;
+  --color-amber-500: #f59e0b;
+}
+
+/* Light Mode Overrides: Luxury royal midnight ink theme */
+.light {
+  --color-slate-950: #f4f6fa; /* Soft luxury off-white page background */
+  --color-slate-900: #ffffff; /* Pure white panel backgrounds */
+  --color-slate-850: #cbd5e1; /* Clear elegant borders */
+  --color-slate-800: #94a3b8; /* Clear borders */
+  --color-slate-700: #64748b; /* Accent dividers */
+  
+  /* Make all gray (ash) and light text resolve to pure high-contrast black in light mode */
+  --color-slate-100: #000000; /* Deep black */
+  --color-slate-200: #000000; /* Deep black */
+  --color-slate-350: #000000; /* Deep black */
+  --color-slate-300: #000000; /* Deep black */
+  --color-slate-400: #000000; /* Deep black */
+  --color-slate-500: #000000; /* Deep black */
+  --color-slate-650: #000000; /* Deep black */
+
+  /* High contrast accent overrides for Light Mode */
+  --color-indigo-300: #1e1b4b; /* Extremely dark deep indigo */
+  --color-indigo-400: #312e81; /* Extremely dark deep indigo */
+  --color-indigo-500: #312e81; 
+  --color-indigo-650: #1e1b4b; 
+  --color-indigo-700: #1e1b4b;
+
+  --color-emerald-300: #064e3b; /* Dark emerald */
+  --color-emerald-400: #064e3b; /* Dark emerald */
+  --color-emerald-500: #064e3b;
+  --color-emerald-650: #022c22;
+
+  --color-rose-300: #7f1d1d; /* Dark blood red */
+  --color-rose-400: #7f1d1d; /* Dark blood red */
+  --color-rose-500: #991b1b;
+  --color-rose-650: #450a0a;
+
+  --color-amber-300: #78350f; /* Dark copper brown */
+  --color-amber-400: #78350f; /* Dark copper brown */
+  --color-amber-500: #78350f;
+}
+
+/* Base custom resets for the Light Theme to ensure absolute perfection */
+.light h1, 
+.light h2, 
+.light h3, 
+.light h4, 
+.light h5, 
+.light h6 {
+  color: #000000 !important; /* Pure Black */
+}
+
+/* Explicit high-specificity helpers for dark containers / active cards to retain contrast in light mode */
+.active-text-white,
+.light .active-text-white,
+.light [class*="bg-[#0f172a]"] .active-text-white {
+  color: #ffffff !important;
+}
+
+.active-text-slate-300,
+.light .active-text-slate-300,
+.light [class*="bg-[#0f172a]"] .active-text-slate-300 {
+  color: #cbd5e1 !important;
+}
+
+.active-text-emerald-300,
+.light .active-text-emerald-300,
+.light [class*="bg-[#0f172a]"] .active-text-emerald-300 {
+  color: #34d399 !important;
+}
+
+.active-text-amber-300,
+.light .active-text-amber-300,
+.light [class*="bg-[#0f172a]"] .active-text-amber-300 {
+  color: #fcd34d !important;
+}
+
+.active-text-indigo-300,
+.light .active-text-indigo-300 {
+  color: #a5b4fc !important;
+}
+
+.light p,
+.light span,
+.light label,
+.light small,
+.light legend,
+.light .text-slate-900,
+.light .text-slate-850,
+.light .text-slate-800,
+.light .text-slate-700,
+.light .text-slate-650,
+.light .text-slate-600,
+.light .text-slate-500,
+.light .text-slate-400,
+.light .text-slate-350,
+.light .text-slate-300,
+.light .text-slate-200,
+.light .text-slate-100 {
+  color: #000000 !important; /* Force all normal/ash/slate fonts to be 100% visible rich black in light mode */
+}
+
+/* Ensure colored badge span items retain their contrast color over white backgrounds */
+.light .text-emerald-400,
+.light .text-emerald-500,
+.light .text-emerald-700 {
+  color: #064e3b !important;
+}
+
+.light .text-rose-400,
+.light .text-rose-500 {
+  color: #7f1d1d !important;
+}
+
+.light .text-amber-400,
+.light .text-amber-500 {
+  color: #78350f !important;
+}
+
+.light .text-indigo-400,
+.light .text-indigo-500 {
+  color: #1e1b4b !important;
+}
+
+/* If text claims to be white and is element like a div/span, force it to be black unless it's a solid button/badge background container */
+.light .text-white:not(button):not(.bg-indigo-600):not(.bg-rose-600):not(.bg-[#2563eb]):not(.bg-slate-900):not([class*="bg-emerald"]):not([class*="bg-indigo"]):not([class*="bg-rose"]):not([class*="bg-slate"]) {
+  color: #000000 !important;
+}
+
+.light .text-slate-400,
+.light .text-slate-500,
+.light .text-slate-650 {
+  color: #000000 !important;
+}
+
+/* Make sure standard grayed headers of small details are totally legible */
+.light text,
+.light .recharts-text {
+  fill: #000000 !important;
+  font-weight: 700 !important;
+}
+
+/* Fix standard light cards background colors & forms */
+.light input,
+.light select,
+.light textarea {
+  background-color: #f8fafc !important;
+  color: #121829 !important;
+  border-color: #cbd5e1 !important;
+}
+
+.light input::placeholder {
+  color: #94a3b8 !important;
+}
+
+/* Smooth theme switching transition for all elements */
+* {
+  transition-property: background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+}
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Explicit mapping of custom palette into Tailwind v4 engine */
+  --color-slate-950: var(--color-slate-950);
+  --color-slate-900: var(--color-slate-900);
+  --color-slate-850: var(--color-slate-850);
+  --color-slate-800: var(--color-slate-800);
+  --color-slate-700: var(--color-slate-700);
+  --color-slate-650: var(--color-slate-650);
+  --color-slate-500: var(--color-slate-500);
+  --color-slate-400: var(--color-slate-400);
+  --color-slate-350: var(--color-slate-350);
+  --color-slate-300: var(--color-slate-300);
+  --color-slate-200: var(--color-slate-200);
+  --color-slate-100: var(--color-slate-100);
+
+  /* Accent Dynamic Colors Mapping */
+  --color-indigo-300: var(--color-indigo-300);
+  --color-indigo-400: var(--color-indigo-400);
+  --color-indigo-500: var(--color-indigo-500);
+  --color-indigo-650: var(--color-indigo-650);
+  --color-indigo-700: var(--color-indigo-700);
+
+  --color-emerald-300: var(--color-emerald-300);
+  --color-emerald-400: var(--color-emerald-400);
+  --color-emerald-500: var(--color-emerald-500);
+  --color-emerald-650: var(--color-emerald-650);
+
+  --color-rose-300: var(--color-rose-300);
+  --color-rose-400: var(--color-rose-400);
+  --color-rose-500: var(--color-rose-500);
+  --color-rose-650: var(--color-rose-650);
+
+  --color-amber-300: var(--color-amber-300);
+  --color-amber-400: var(--color-amber-400);
+  --color-amber-500: var(--color-amber-500);
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Personal Finance & Spend Coach",
+  "description": "An interactive full-stack personal finance manager with an automated budget allocation engine, debt repayment tracker, custom savings goals, gamification systems, and a real server-side AI financial coach.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
